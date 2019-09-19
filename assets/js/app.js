@@ -28,3 +28,7 @@ $("#add-animal-button").on("click", function(e) {
 	}
 	$("#new-animal-input").val("");
 });
+// added keys and links to have the gifs pop up to the page
+$(document).on("click", ".animal-button", function() {
+	var animal = $(this).attr("data-animal");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10&rating=g&pg";
