@@ -41,14 +41,14 @@ $(document).on("click", ".animal-button", function() {
     	// console.log(results)
         // added container section
 		var resultsContainerSection = $("<section class='results-container'>");
-
+        //created another for loop to keep adding gif results
     	for(var i = 0; i < results.length; i++) {
     		var singleResultDiv = $("<div class='result-container'>");
-    		
+    		//add rating
     		var rating = results[i].rating;
 
     		var p = $("<p>").text("Rating: " + rating);
-
+            //
     		var animalImg = $("<img class='result'>");
     		animalImg.attr("src", results[i].images.fixed_height_still.url);
     		animalImg.attr("data-state", "still");
@@ -60,11 +60,11 @@ $(document).on("click", ".animal-button", function() {
 
     		resultsContainerSection.prepend(singleResultDiv);
         }
-        
+        //attaching...
     	$("#animal-group").prepend(resultsContainerSection);
     });
 });
-
+//added clicks to have gif playing once it is clicked and clicked again to stop it
 $(document).on("click", ".result", function() {
 	var state = $(this).attr("data-state");
 
